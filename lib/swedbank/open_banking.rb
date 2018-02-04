@@ -15,7 +15,6 @@ module Swedbank
       yield self
     end
 
-
     def self.oauth_token=(val)
       @@oauth_token = val
     end
@@ -40,3 +39,4 @@ end
 require "swedbank/open_banking/request_builder"
 require "swedbank/open_banking/transaction"
 require "swedbank/open_banking/account"
+require "swedbank/open_banking/swedish_domestic_payment"
