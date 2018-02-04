@@ -11,7 +11,7 @@ module Swedbank
           "date_to":      opts.delete(:date_to)      || (Date.today + 1)
         }
 
-        response = Swedbank::OpenBanking::AIS::RequestBuilder.new(**opts).
+        response = Swedbank::OpenBanking::RequestBuilder.new(**opts).
           get("v1/accounts/#{account_id}/transactions", params: params)
 
         hash_response = JSON.parse(response.body).to_h

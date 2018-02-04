@@ -9,7 +9,7 @@ module Swedbank
           "with-balance": opts[:with_balance] || false
         }
 
-        response = Swedbank::OpenBanking::AIS::RequestBuilder.new(**opts).
+        response = Swedbank::OpenBanking::RequestBuilder.new(**opts).
           get("v1/accounts", params: params)
 
         hash_response = JSON.parse(response.body).to_h
@@ -22,7 +22,7 @@ module Swedbank
         params = {
           "with-balance": opts[:with_balance] || false
         }
-        response = Swedbank::OpenBanking::AIS::RequestBuilder.new(**opts).
+        response = Swedbank::OpenBanking::RequestBuilder.new(**opts).
           get("v1/accounts/#{id}", params: params)
         hash_response = new(JSON.parse(response.body).to_h)
       end
